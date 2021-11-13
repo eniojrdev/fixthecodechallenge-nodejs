@@ -48,16 +48,16 @@ app.put("/repositories/:id", checkIfRepositoryExists, (request, response) => {
   
   const repository = repositories[repositoryIndex];
 
-  const updateRepository = { 
+  const updatedRepository = { 
     ...repository, 
     title: title || repository.title,
     techs: techs || repository.techs,
     url: url || repository.url
   };
 
-  repositories[repositoryIndex] = updateRepository;
+  repositories[repositoryIndex] = updatedRepository;
 
-  return response.json(updateRepository);
+  return response.json(updatedRepository);
 });
 
 app.delete("/repositories/:id", checkIfRepositoryExists, (request, response) => {
